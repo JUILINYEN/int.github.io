@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header {
+    position: relative;
+    background-image: url('10914085_顏睿麟.png'); /* 背景圖片路徑 */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0; /* 調整填充以確保內容在背景圖上方居中 */
+    overflow: hidden; /* 確保覆蓋層不會超出 header 的範圍 */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    background-color: rgba(250, 248, 248, 0.5); /* 灰色背景，60%透明度 */
+    z-index: 1; /* 確保覆蓋層在背景圖上 */
+}
+
+header .profile-photo, header h1 {
+    position: relative; /* 確保照片和文字顯示在覆蓋層上 */
+    z-index: 2; /* 確保照片和文字在覆蓋層上方 */
+}
+
+header .profile-photo {
+    position: relative; /* 確保照片和文字顯示在覆蓋層上 */
+    z-index: 2; /* 確保照片在覆蓋層上方 */
+    width: 200px; /* 根據需要調整照片大小 */
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #fff; /* 根據需要添加邊框 */
+    margin-bottom: 1em;
+}
+  
+section {
+    margin: 2em;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center; /* 垂直居中對齊 */
+    justify-content: space-between; /* 水平分佈空間 */
+    flex-wrap: wrap; /* 在小屏幕上換行 */
+}
+
+.text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.profile-photo-container {
+    flex: 0 0 auto; /* 確保照片不會擴展 */
+    text-align: center; /* 文字居中對齊 */
+    margin: 0 20px; /* 根據需要調整間距 */
+}
+
+.profile-photo {
+    width: 300px; /* 調整照片大小 */
+    height: auto;
+    border: 5px solid #000000; /* 添加邊框 */
+}
+
+.img-home {
+    flex: 0 0 auto; /* 確保圖片和文字不會擴展 */
+    margin: 0 20px; /* 根據需要調整間距 */
+}
+
+.img-home img {
+    width: 300px; /* 調整圖片寬度 */
+    height: auto; /* 保持圖片比例 */
+    display: inline-block; /* 確保圖片和文字在同一行 */
+    vertical-align: top; /* 確保圖片和文字頂部對齊 */
+}
+
+.img-home p {
+    display: contents; /* 確保圖片和文字在同一行 */
+    vertical-align: top; /* 確保圖片和文字頂部對齊 */
+    margin-left: 10px; /* 圖片和文字之間的間距 */
+    font-size: 50px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* 添加這一行確保在小屏幕上換行 */
+}
+
+.image-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.image-item img {
+    width: 300px; /* 根據需要調整圖片寬度 */
+    height: auto;
+}
+
+.image-item p {
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+h1, h2 {
+    color: #000000;
+}
+
+nav {
+    text-align: center; /* 行置中 */
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    background-color: #e7e7e7;
+    padding: 0.5em;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+}
+
+footer {
+    position: absolute; /* 絕對定位 */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .image-item img {
+        width: 100%; /* 在小屏幕上圖片寬度設為100% */
+    }
+    
+    header, footer {
+        padding: 1em; /* 減小填充以適應小屏幕 */
+    }
+    
+    .profile-photo {
+        width: 100px; /* 減小照片大小 */
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    section, nav {
+        margin: 1em;
+    }
+    
+    ul li {
+        padding: 0.5em;
+        width: 100%;
+    }
+}
